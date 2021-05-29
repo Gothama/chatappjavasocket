@@ -1,7 +1,7 @@
-package com.company;
+package com.company.client;
 
 import java.io.*;
-import java.net.Socket;
+import java.util.Scanner;
 
 public class ChatClient {
     public static void main(String[] args) throws IOException {
@@ -27,10 +27,22 @@ public class ChatClient {
        Client client = new Client();
        client.start();
        client.sendMessage("Hello from the client");
-        client.sendMessage("How are you?");
+
+
+       Scanner j = new Scanner(System.in);
+        String h;
+       do{
+            h = j.nextLine();
+           client.sendMessage(h);
+       }
+       while(!h.equals("exit"));
+
+
+
+        /*
         client.sendMessage("I am fine");
         client.sendMessage("Thank you");
-        client.sendMessage("exit");
+        client.sendMessage("exit");*/
        //send data to the server
 
 
