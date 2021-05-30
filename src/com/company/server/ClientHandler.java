@@ -1,5 +1,6 @@
 package com.company.server;
 
+
 import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
@@ -20,10 +21,11 @@ public class ClientHandler implements Runnable{
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             DataOutputStream dataOutputStream = new DataOutputStream(client.getOutputStream());
             Scanner l = new Scanner(System.in);
+
             String k;
             //continuous reading data from the client
             String inputData;
-            while ((inputData = bufferedReader.readLine()) != null) {
+            while ((inputData = (bufferedReader.readLine())) != null) {
                 System.out.println("Client says: " + inputData);
                  /*switch (inputData) {
                     case "Hello from the client":

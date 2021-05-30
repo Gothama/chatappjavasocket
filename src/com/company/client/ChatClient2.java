@@ -1,6 +1,7 @@
 package com.company.client;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class ChatClient2 {
     public static void main(String[] args) throws IOException {
@@ -23,16 +24,17 @@ public class ChatClient2 {
         String recievedData = bufferedReader.readLine();
         System.out.println("Data recieved from the server: " + recievedData);*/
 
-       Client client = new Client();
-       client.start();
-       client.sendMessage("Hello from the client");
-        client.sendMessage("How are you?");
-        client.sendMessage("I am fine");
-        client.sendMessage("Thank you");
-        client.sendMessage("exit");
-       //send data to the server
+        Client client = new Client();
+        client.start();
+        client.sendMessage("Hello from the client");
 
-
+        Scanner j = new Scanner(System.in);
+        String h;
+        do{
+            h = j.nextLine();
+            client.sendMessage(h);
+        }
+        while(!h.equals("exit"));
 
         System.out.println("Client finished the execution");
 
