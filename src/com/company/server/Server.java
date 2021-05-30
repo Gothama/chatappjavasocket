@@ -12,7 +12,7 @@ public class Server {
         ServerSocket serverSocket = new ServerSocket(6002);
         System.out.println("Server socket created");
     int k=0;
-        while(k<=1) {
+        while(k<=2) {
             k++;
             Socket client = serverSocket.accept();
             System.out.println("Server accepted a client");
